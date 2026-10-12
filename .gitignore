@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment and secrets
+.env
+.env.*
+wp-config.php
+wp-config-local.php
+
+# WordPress uploads and backups
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Build artifacts
+dist/
+assets/dist/
+build/
+.wp-env/

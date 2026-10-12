@@ -1,0 +1,15 @@
+{
+  "core": "WordPress/WordPress",
+  "plugins": [
+    "./wp-content/plugins/gk-core"
+  ],
+  "themes": [
+    "./wp-content/themes/gk-theme"
+  ],
+  "config": {
+    "WP_DEBUG": true,
+    "WP_DEBUG_LOG": true,
+    "WP_DEBUG_DISPLAY": false,
+    "SCRIPT_DEBUG": true
+  }
+}

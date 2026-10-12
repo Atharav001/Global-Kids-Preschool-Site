@@ -1,0 +1,26 @@
+{
+  "name": "global-kids-preschool-site",
+  "version": "1.0.0",
+  "description": "Global Kids Preschool Website - Custom gk-theme, gk-core companion plugin, and interactive preview server",
+  "private": true,
+  "scripts": {
+    "dev": "node server/server.js",
+    "start": "node server/server.js",
+    "preview": "node server/server.js",
+    "build": "node scripts/build.js",
+    "build:zip": "node scripts/package-zips.js",
+    "lint": "node scripts/lint.js",
+    "test": "node tests/launch-check.js",
+    "launch-check": "node tests/launch-check.js",
+    "playground": "npx @wp-playground/cli start --mount=./wp-content/themes/gk-theme:/wordpress/wp-content/themes/gk-theme --mount=./wp-content/plugins/gk-core:/wordpress/wp-content/plugins/gk-core"
+  },
+  "keywords": [
+    "preschool",
+    "wordpress-theme",
+    "wordpress-plugin",
+    "accessible",
+    "mobile-first"
+  ],
+  "author": "Global Kids Developer",
+  "license": "UNLICENSED"
+}

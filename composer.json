@@ -1,0 +1,23 @@
+{
+  "name": "globalkids/preschool-site",
+  "description": "Global Kids Preschool Website - Custom Theme and Companion Core Plugin",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Developer for Global Kids Preschool",
+      "email": "dev@globalkids.edu.in"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "wp-coding-standards/wpcs": "^3.0"
+  },
+  "scripts": {
+    "phpcs": "phpcs -p -s -v -n . --standard=WordPress --extensions=php --ignore=node_modules,vendor",
+    "phpcbf": "phpcbf -p -s -v -n . --standard=WordPress --extensions=php --ignore=node_modules,vendor"
+  }
+}
