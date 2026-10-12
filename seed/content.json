@@ -1,0 +1,183 @@
+{
+  "_gk_sample": true,
+  "programmes": [
+    {
+      "title": "Toddler Explorers",
+      "slug": "toddler",
+      "age_band": "1.5 – 2.5 Years",
+      "timings": "09:00 AM – 11:30 AM",
+      "ratio": "1:5",
+      "fee_text": "Available on request",
+      "summary": "Gentle sensory exploration, gross-motor discovery, and nurturing social bonding in a secure toddler environment.",
+      "curriculum": [
+        "Sensory tactile play with non-toxic natural materials",
+        "Songs, rhymes, and receptive language development",
+        "Early social interaction and emotional security building",
+        "Fine and gross motor coordination games"
+      ],
+      "schedule": "09:00 Circle Welcome · 09:30 Sensory Stations · 10:15 Healthy Fruit Snack · 10:45 Music & Movement · 11:15 Story & Goodbye",
+      "icon": "sparkles"
+    },
+    {
+      "title": "Playgroup Pioneers",
+      "slug": "playgroup",
+      "age_band": "2.0 – 3.0 Years",
+      "timings": "09:00 AM – 12:00 PM",
+      "ratio": "1:7",
+      "fee_text": "Available on request",
+      "summary": "Hands-on guided discovery, expressive vocabulary development, and peer collaboration through interactive play.",
+      "curriculum": [
+        "Phonemic awareness through storytelling and rhythm",
+        "Basic numeracy concepts: shapes, sizes, and sorting",
+        "Self-help routines: handwashing, tidy-up habits, and sharing",
+        "Artistic expression with finger paints and clay modeling"
+      ],
+      "schedule": "09:00 Warm-up Circle · 09:35 Activity Centers · 10:20 Hygiene & Snack · 10:50 Outdoor Sand & Water Play · 11:30 Circle Story",
+      "icon": "puzzle"
+    },
+    {
+      "title": "Nursery Discoverers",
+      "slug": "nursery",
+      "age_band": "3.0 – 4.0 Years",
+      "timings": "08:45 AM – 12:30 PM",
+      "ratio": "1:8",
+      "fee_text": "Available on request",
+      "summary": "Pre-reading phonics, foundational numeracy, environmental awareness, and creative problem solving.",
+      "curriculum": [
+        "Jolly Phonics letter sounds, letter recognition, and trace work",
+        "Number value association (1–20), patterns, and comparisons",
+        "Theme-based inquiry: community helpers, plants, and seasons",
+        "Collaborative role-play and confidence building"
+      ],
+      "schedule": "08:45 Morning Assembly · 09:15 Phonics & Language · 10:00 Snack Break · 10:30 Math Discovery · 11:15 Creative Art · 12:00 Story Wrap",
+      "icon": "book-open"
+    },
+    {
+      "title": "Kindergarten Leaders (KG1 & KG2)",
+      "slug": "kindergarten",
+      "age_band": "4.0 – 6.0 Years",
+      "timings": "08:30 AM – 01:00 PM",
+      "ratio": "1:10",
+      "fee_text": "Available on request",
+      "summary": "Comprehensive primary school readiness: independent reading, writing, mathematical thinking, and scientific inquiry.",
+      "curriculum": [
+        "Sight words, sentence construction, and expressive storytelling",
+        "Addition, subtraction concepts, measurement, and calendar math",
+        "Hands-on STEM experiments, nature walks, and green habits",
+        "Public speaking, show-and-tell, and emotional resilience"
+      ],
+      "schedule": "08:30 Assembly · 09:00 Literacy Workshop · 10:00 Fruit Break · 10:30 Numeracy Lab · 11:30 Science Exploration · 12:15 Library & Review",
+      "icon": "award"
+    },
+    {
+      "title": "Full-Day Daycare & After-School",
+      "slug": "daycare",
+      "age_band": "1.5 – 10 Years",
+      "timings": "08:30 AM – 06:30 PM",
+      "ratio": "1:6",
+      "fee_text": "Available on request",
+      "summary": "A peaceful second home with hygienic hot meals, supervised naps, structured evening hobbies, and homework support.",
+      "curriculum": [
+        "Fresh, nutritionist-planned afternoon snacks and warm milk",
+        "Air-conditioned, sanitized sleeping suites with individual cots",
+        "Evening recreation: chess, gymnastics, classical storytelling",
+        "Dedicated homework assistance by trained educators"
+      ],
+      "schedule": "12:30 Lunch & Hygiene · 01:15 Quiet Nap Time · 03:45 Evening Snack · 04:15 Guided Hobby Clubs · 05:30 Supervised Free Play & Departure",
+      "icon": "sun"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Shanmuga Praba S.",
+      "role": "Founder & Head of School",
+      "qualification": "M.Ed (Early Childhood Education), 18+ Yrs Experience",
+      "bio": "Dedicated early educator believing that compassionate environments create lifelong learners."
+    },
+    {
+      "name": "Ananya Krishnan",
+      "role": "Senior Nursery Lead Educator",
+      "qualification": "Montessori Diploma & B.A. English, 9+ Yrs Experience",
+      "bio": "Specialist in phonics and joyful reading readiness."
+    },
+    {
+      "name": "Lakshmi Narayanan",
+      "role": "Lead Kindergarten Specialist",
+      "qualification": "B.Ed & Child Psychology Certification, 11+ Yrs Experience",
+      "bio": "Passionate about experiential STEM and peer collaboration."
+    },
+    {
+      "name": "Kavitha Ramesh",
+      "role": "Toddler Care & Early Sensory Coordinator",
+      "qualification": "Early Childhood Care and Education (ECCE), 7+ Yrs Experience",
+      "bio": "Creates gentle, patient learning spaces for first-time school starters."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Meera R.",
+      "programme": "Parent of Nursery Child",
+      "quote": "Finding a school that values emotional security as much as academic readiness was our top priority. At Global Kids, our daughter adjusted within three days and now eagerly wakes up for school every morning.",
+      "consent_confirmed": "1"
+    },
+    {
+      "name": "Karthik & Deepa S.",
+      "programme": "Parents of KG1 Child",
+      "quote": "The transparent communication, CCTV security, and exceptionally patient educators give us total peace of mind. The phonics foundation has transformed our son's confidence in reading.",
+      "consent_confirmed": "1"
+    },
+    {
+      "name": "Dr. Radhika V.",
+      "programme": "Parent of Daycare & Playgroup",
+      "quote": "As working parents, the daycare hygiene and loving care provided by the aunties and teachers is unmatched. The nutritious snacks and peaceful nap routine made all the difference.",
+      "consent_confirmed": "1"
+    }
+  ],
+  "faqs": [
+    {
+      "topic": "admissions",
+      "question": "What is the admission procedure for the upcoming academic year?",
+      "answer": "Our admission process is simple and parent-friendly: 1) Schedule a campus visit or enquire online; 2) Tour the classrooms and meet our Head of School; 3) Complete the child profile form and submit verification documents; 4) Confirm enrollment upon seat allocation."
+    },
+    {
+      "topic": "admissions",
+      "question": "What are the age cut-off criteria for different programmes?",
+      "answer": "The child must complete the designated age by 31st July of the academic year: Toddlers (1.5 yrs), Playgroup (2 yrs), Nursery (3 yrs), and Kindergarten (4+ yrs)."
+    },
+    {
+      "topic": "fees",
+      "question": "How are programme fees structured and paid?",
+      "answer": "Fees are structured term-wise or quarterly. They cover curriculum materials, daily fruit snacks, student safety insurance, and activity kits. Detailed fee sheets are handed over transparently during your scheduled campus visit."
+    },
+    {
+      "topic": "safety",
+      "question": "What safety and security protocols are active on campus?",
+      "answer": "We enforce 100% CCTV coverage in classrooms and play zones, verified background checks on all staff, biometric/gatekeeper entry, a strict dual-card authorized pickup protocol, and on-site pediatric first-aid trained personnel."
+    },
+    {
+      "topic": "daily-routine",
+      "question": "What happens if my child experiences separation anxiety?",
+      "answer": "We welcome gradual settling sessions! During the first week, children attend for 60 to 90 minutes, and parents may wait in our reception lounge until the child feels completely settled and secure."
+    },
+    {
+      "topic": "daily-routine",
+      "question": "Are toilet-training requirements mandatory for toddlers or playgroup?",
+      "answer": "No. Our patient child-care educators assist children gently through toilet training at their natural pace with dedicated sanitised child-height washrooms."
+    }
+  ],
+  "albums": [
+    {
+      "title": "Annual Joy Fest & Cultural Celebrations 2025",
+      "slug": "annual-day",
+      "event_date": "2025-12-18",
+      "description": "Children showcasing rhymes, folk dances, and collaborative skits with parents and teachers.",
+      "consent_confirmed": "1",
+      "images": [
+        { "caption": "Little artists creating finger-print murals", "alt": "Preschool children doing colorful finger painting" },
+        { "caption": "Toddlers exploring sensory water wheel", "alt": "Toddlers playing at outdoor water sensory station" },
+        { "caption": "Music circle and percussion instruments", "alt": "Children in music class playing rhythm instruments" },
+        { "caption": "Outdoor sandbox discovery game", "alt": "Children building sandcastles in shaded playground" }
+      ]
+    }
+  ]
+}
