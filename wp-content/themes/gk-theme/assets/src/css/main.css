@@ -1620,3 +1620,337 @@ textarea.form-control {
     transform: none !important;
   }
 }
+
+/* ========================================================
+   SPICY AESTHETICS, EMBLEM & OFFICIAL ACCREDITATIONS
+   ======================================================== */
+
+/* 1. Official School Crest / Emblem */
+.school-emblem {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: block;
+  transition: transform var(--t-fast) var(--ease), filter var(--t-fast) var(--ease);
+  filter: drop-shadow(0 2px 6px rgba(43, 42, 53, 0.12));
+}
+
+.brand-logo:hover .school-emblem {
+  transform: rotate(3deg) scale(1.05);
+  filter: drop-shadow(0 4px 10px rgba(247, 181, 0, 0.35));
+}
+
+.school-emblem-lg {
+  width: 80px;
+  height: 80px;
+}
+
+/* 2. Continuous Accreditation Marquee Ribbon */
+.marquee-band {
+  background: linear-gradient(90deg, #1C2B54 0%, #2A448C 50%, #1C2B54 100%);
+  color: #FFFFFF;
+  padding: 0.75rem 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(255, 201, 60, 0.3);
+  border-bottom: 2px solid var(--sun);
+  box-shadow: var(--shadow-sm);
+  z-index: 20;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+  font-family: var(--font-head);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.marquee-badge-pill {
+  background: var(--sun);
+  color: var(--on-sun);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
+/* 3. Official Institutional Accreditations Showcase */
+.accreditation-section {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--tint-sky) 100%);
+  border-bottom: 1px solid var(--line);
+  padding: var(--s-8) 0;
+}
+
+.accreditation-header {
+  text-align: center;
+  margin-bottom: var(--s-6);
+}
+
+.accreditation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--s-4);
+}
+
+.accreditation-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4) var(--s-6);
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+
+.accreditation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--sun);
+}
+
+.accreditation-seal {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  background: var(--tint-sun);
+  border: 2px solid var(--sun);
+  border-radius: var(--r-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #946200;
+}
+
+.accreditation-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+  color: var(--ink);
+}
+
+.accreditation-info p {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+/* 4. Interactive Campus Spaces Explorer */
+.campus-spaces-container {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-top: var(--s-6);
+}
+
+.spaces-tab-bar {
+  display: flex;
+  overflow-x: auto;
+  background: var(--bg);
+  padding: var(--s-3);
+  gap: var(--s-2);
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none;
+}
+
+.spaces-tab-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.space-tab-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: var(--font-head);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.space-tab-btn:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.space-tab-btn.active {
+  background: var(--sun);
+  color: var(--on-sun);
+  border-color: var(--sun-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.space-panel-content {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: var(--s-6);
+  padding: var(--s-6);
+  animation: fadeIn 300ms ease;
+}
+
+.space-panel-content.active {
+  display: grid;
+}
+
+@media (min-width: 48em) {
+  .space-panel-content {
+    grid-template-columns: 1.15fr 0.85fr;
+    padding: var(--s-8);
+  }
+}
+
+.space-panel-media {
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 16/10;
+}
+
+.space-panel-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.space-panel-media:hover img {
+  transform: scale(1.04);
+}
+
+.space-panel-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(43, 42, 53, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-pill);
+  font-size: 0.75rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+
+.space-panel-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-3);
+}
+
+.space-panel-details h3 {
+  font-size: var(--fs-xl);
+  color: var(--ink);
+}
+
+.space-specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.space-spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  color: var(--ink);
+}
+
+.space-spec-item span.icon-check {
+  color: var(--ok);
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. Interactive Milestone Calculator Widget */
+.calc-card {
+  background: linear-gradient(145deg, var(--surface) 0%, var(--tint-sun) 100%);
+  border: 2px solid var(--sun);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-md);
+}
+
+.calc-result-box {
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  margin-top: var(--s-4);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+/* 6. Realistic Local Infrastructure Ribbons */
+.infra-ribbon {
+  background: var(--tint-mint);
+  border: 1px solid #C4E8D1;
+  border-radius: var(--r-md);
+  padding: var(--s-4) var(--s-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+
+.infra-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  font-weight: 600;
+}

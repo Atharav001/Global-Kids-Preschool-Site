@@ -6,7 +6,10 @@
 <div class="mobile-menu-overlay" aria-hidden="true"></div>
 <aside id="mobile-menu-drawer" class="mobile-menu-drawer" aria-label="<?php esc_attr_e('Mobile Navigation', 'gk-theme'); ?>">
     <div class="mobile-menu-header">
-        <span class="brand-title"><?php echo esc_html(gk_setting('school_name', 'Global Kids')); ?></span>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <?php get_template_part('template-parts/icons/school-emblem'); ?>
+            <span class="brand-title"><?php echo esc_html(gk_setting('school_name', 'Global Kids')); ?></span>
+        </div>
         <button class="btn-menu-close btn-menu-toggle" type="button" aria-label="<?php esc_attr_e('Close menu', 'gk-theme'); ?>">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18"></line>

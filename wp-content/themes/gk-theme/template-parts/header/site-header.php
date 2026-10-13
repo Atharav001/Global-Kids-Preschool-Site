@@ -9,7 +9,7 @@ $tagline = gk_setting('tagline', 'Where Joy Meets Early Learning');
 <header class="site-header" role="banner">
     <div class="container header-inner">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="brand-logo" aria-label="<?php echo esc_attr($school_name); ?>">
-            <div class="logo-icon-badge" aria-hidden="true">GK</div>
+            <?php get_template_part('template-parts/icons/school-emblem'); ?>
             <div class="brand-text">
                 <span class="brand-title"><?php echo esc_html($school_name); ?></span>
                 <span class="brand-subtitle"><?php echo esc_html($tagline); ?></span>

@@ -236,4 +236,88 @@
     });
   });
 
+  // 10. Interactive Campus Spaces Explorer Tabs
+  const spaceTabBtns = document.querySelectorAll('.space-tab-btn');
+  const spacePanels = document.querySelectorAll('.space-panel-content');
+  if (spaceTabBtns.length > 0 && spacePanels.length > 0) {
+    spaceTabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target-panel');
+        spaceTabBtns.forEach(b => b.classList.remove('active'));
+        spacePanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const activePanel = document.getElementById(targetId);
+        if (activePanel) activePanel.classList.add('active');
+      });
+    });
+  }
+
+  // 11. Interactive Child Milestone Calculator
+  const calcSelect = document.getElementById('calc-age-select');
+  const calcResultBox = document.getElementById('calc-result-display');
+  if (calcSelect && calcResultBox) {
+    const milestoneData = {
+      'toddler': {
+        prog: 'Toddler Explorers (1.5 – 2.5 yrs)',
+        ratio: '1:5 Educator Ratio',
+        timings: '09:00 AM – 11:30 AM',
+        milestones: 'Sensory tactile exploration, receptive vocabulary, finger grasp, and gentle separation confidence.',
+        settling: '3-day gradual settling sessions with parent in lounge.'
+      },
+      'playgroup': {
+        prog: 'Playgroup Pioneers (2.0 – 3.0 yrs)',
+        ratio: '1:7 Educator Ratio',
+        timings: '09:00 AM – 12:00 PM',
+        milestones: 'Phonemic rhythm songs, 2-word phrase sentences, shape sorting, independent handwashing, and peer sharing.',
+        settling: '4-day staggered transition with dedicated settling buddy educator.'
+      },
+      'nursery': {
+        prog: 'Nursery Discoverers (3.0 – 4.0 yrs)',
+        ratio: '1:8 Educator Ratio',
+        timings: '08:45 AM – 12:30 PM',
+        milestones: 'Jolly Phonics letter sounds, number concepts (1–20), scissor control, pencil grasp, and theme-based inquiries.',
+        settling: '5-day confidence building program with morning circle games.'
+      },
+      'kindergarten': {
+        prog: 'Kindergarten Leaders (4.0 – 6.0 yrs)',
+        ratio: '1:10 Educator Ratio',
+        timings: '08:30 AM – 01:00 PM',
+        milestones: 'Independent reading, sentence formation, mental math, STEM curiosity, public speaking, and primary school readiness.',
+        settling: 'Immediate engagement with team STEM discovery activities.'
+      },
+      'daycare': {
+        prog: 'Full-Day Daycare & Extended Care (1.5 – 10 yrs)',
+        ratio: '1:6 Attendant Ratio',
+        timings: '08:30 AM – 06:30 PM',
+        milestones: 'Warm home-cooked hot meals, supervised sanitized nap suites, evening storytelling, chess, and homework guidance.',
+        settling: 'Personalized sleep and dietary schedule matching home routine.'
+      }
+    };
+
+    calcSelect.addEventListener('change', () => {
+      const selected = calcSelect.value;
+      const data = milestoneData[selected];
+      if (data) {
+        calcResultBox.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--line); padding-bottom: 0.75rem;">
+            <strong style="font-family: var(--font-head); font-size: 1.15rem; color: var(--blue);">${data.prog}</strong>
+            <span class="sticker-badge" style="transform:none;">${data.ratio}</span>
+          </div>
+          <div style="font-size: var(--fs-sm); color: var(--ink); margin-top: 0.5rem;">
+            <strong>Classroom Timings:</strong> ${data.timings}
+          </div>
+          <div style="font-size: var(--fs-sm); color: var(--ink-soft); margin-top: 0.25rem;">
+            <strong>Key Milestone Focus:</strong> ${data.milestones}
+          </div>
+          <div style="font-size: var(--fs-xs); color: var(--ok); font-weight: 600; margin-top: 0.4rem;">
+            ✔ Gentle Settling Protocol: ${data.settling}
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="/admissions/?programme=${encodeURIComponent(data.prog)}#visit" class="btn btn-primary btn-sm">Schedule Visit for this Batch →</a>
+          </div>
+        `;
+      }
+    });
+  }
+
 })();

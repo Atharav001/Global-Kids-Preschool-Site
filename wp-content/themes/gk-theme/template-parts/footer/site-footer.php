@@ -24,7 +24,10 @@ $maps_url = gk_setting('maps_url', 'https://maps.google.com/?q=Global+Kids+Presc
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4><?php echo esc_html($school_name); ?></h4>
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                    <?php get_template_part('template-parts/icons/school-emblem'); ?>
+                    <h4 style="margin-bottom: 0;"><?php echo esc_html($school_name); ?></h4>
+                </div>
                 <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; font-size: 0.95rem;">
                     <?php echo esc_html($tagline); ?>. Nurturing curious minds, empathetic hearts, and confident learners in a joyful, secure environment.
                 </p>
