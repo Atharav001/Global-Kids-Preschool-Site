@@ -69,37 +69,21 @@ const icons = {
   check: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>`
 };
 
-// Continuous Marquee Banner Component
-function renderAccreditationMarquee() {
-  return `<div class="marquee-band" role="region" aria-label="Official Accreditations & Recognitions">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <span class="marquee-item"><span class="marquee-badge-pill">RANKED TOP 50</span> EducationWorld Grand Jury Awards 2024–25 (Chennai & TN)</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">ACCREDITED</span> Early Childhood Association (ECA India & APER)</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">12+ YEARS</span> Trusted Early Years Legacy in Annanagar</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">SAFETY 5-STAR</span> 100% CCTV & Dual-Card Guardian Pickup Protocol</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">HEALTHCARE</span> Emergency Pediatric Protocol with Apollo Cradle & Sundaram Medical</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">LOW RATIO</span> Attentive 1:8 Child-to-Educator Guidance</span>
-        <span>•</span>
+// Institutional School Top Utility Bar
+function renderSchoolTopUtility() {
+  return `<div class="school-top-utility" role="region" aria-label="School Quick Contact & Admissions Portal">
+    <div class="container school-utility-inner">
+      <div class="utility-left">
+        <span><strong>📞 Admissions Helpline:</strong> <a href="tel:${settings.phone_e164}">${settings.phone_e164}</a></span>
+        <span class="utility-divider">|</span>
+        <span><strong>⏰ Working Hours:</strong> Mon–Sat 8:30 AM – 4:30 PM</span>
+        <span class="utility-divider">|</span>
+        <span><strong>📍 Campus:</strong> ${settings.area}, ${settings.city}</span>
       </div>
-      <div class="marquee-content" aria-hidden="true">
-        <span class="marquee-item"><span class="marquee-badge-pill">RANKED TOP 50</span> EducationWorld Grand Jury Awards 2024–25 (Chennai & TN)</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">ACCREDITED</span> Early Childhood Association (ECA India & APER)</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">12+ YEARS</span> Trusted Early Years Legacy in Annanagar</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">SAFETY 5-STAR</span> 100% CCTV & Dual-Card Guardian Pickup Protocol</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">HEALTHCARE</span> Emergency Pediatric Protocol with Apollo Cradle & Sundaram Medical</span>
-        <span>•</span>
-        <span class="marquee-item"><span class="marquee-badge-pill">LOW RATIO</span> Attentive 1:8 Child-to-Educator Guidance</span>
-        <span>•</span>
+      <div class="utility-right">
+        <span class="utility-badge">Admissions 2025–26 Open</span>
+        <a href="/parent-corner/" class="utility-link">Parent Portal 🔒</a>
+        <a href="${getWhatsAppLink()}" target="_blank" rel="noopener noreferrer" class="utility-link utility-wa">WhatsApp Us</a>
       </div>
     </div>
   </div>`;
@@ -162,6 +146,9 @@ function renderPage(title, activeSlug, contentHtml, description = '') {
     </button>
   </aside>` : ''}
 
+  <!-- Institutional Top Utility Bar (Helpline, Working Hours, Parent Portal) -->
+  ${renderSchoolTopUtility()}
+
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="/" class="brand-logo" aria-label="${settings.school_name}">
@@ -173,17 +160,18 @@ function renderPage(title, activeSlug, contentHtml, description = '') {
       </a>
 
       <nav class="nav-menu-desktop" role="navigation" aria-label="Primary Navigation">
-        <a href="/about/" class="nav-link ${activeSlug === 'about' ? 'active' : ''}">About</a>
+        <a href="/about/" class="nav-link ${activeSlug === 'about' ? 'active' : ''}">About Us</a>
         <a href="/programmes/" class="nav-link ${activeSlug === 'programmes' ? 'active' : ''}">Programmes</a>
         <a href="/our-approach/" class="nav-link ${activeSlug === 'our-approach' ? 'active' : ''}">Our Approach</a>
         <a href="/facilities-safety/" class="nav-link ${activeSlug === 'facilities-safety' ? 'active' : ''}">Facilities & Safety</a>
         <a href="/admissions/" class="nav-link ${activeSlug === 'admissions' ? 'active' : ''}">Admissions</a>
-        <a href="/gallery/" class="nav-link ${activeSlug === 'gallery' ? 'active' : ''}">Gallery</a>
+        <a href="/gallery/" class="nav-link ${activeSlug === 'gallery' ? 'active' : ''}">Campus Life</a>
+        <a href="/news/" class="nav-link ${activeSlug === 'news' ? 'active' : ''}">Notice Board</a>
         <a href="/contact/" class="nav-link ${activeSlug === 'contact' ? 'active' : ''}">Contact</a>
       </nav>
 
       <div class="header-cta-group">
-        <a href="/admissions/#visit" class="btn btn-primary btn-sm">Book a Visit</a>
+        <a href="/admissions/#visit" class="btn btn-primary btn-sm">Book Campus Tour</a>
         <button class="btn-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu-drawer" aria-label="Toggle navigation menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -217,8 +205,8 @@ function renderPage(title, activeSlug, contentHtml, description = '') {
       <a href="/our-approach/" class="mobile-nav-link ${activeSlug === 'our-approach' ? 'active' : ''}">Our Approach</a>
       <a href="/facilities-safety/" class="mobile-nav-link ${activeSlug === 'facilities-safety' ? 'active' : ''}">Facilities & Safety</a>
       <a href="/admissions/" class="mobile-nav-link ${activeSlug === 'admissions' ? 'active' : ''}">Admissions</a>
-      <a href="/gallery/" class="mobile-nav-link ${activeSlug === 'gallery' ? 'active' : ''}">Photo Gallery</a>
-      <a href="/news/" class="mobile-nav-link ${activeSlug === 'news' ? 'active' : ''}">News & Events</a>
+      <a href="/gallery/" class="mobile-nav-link ${activeSlug === 'gallery' ? 'active' : ''}">Campus Life Gallery</a>
+      <a href="/news/" class="mobile-nav-link ${activeSlug === 'news' ? 'active' : ''}">Notice Board & Circulars</a>
       <a href="/reviews/" class="mobile-nav-link ${activeSlug === 'reviews' ? 'active' : ''}">Parent Reviews</a>
       <a href="/parent-corner/" class="mobile-nav-link ${activeSlug === 'parent-corner' ? 'active' : ''}">Parent Corner 🔒</a>
       <a href="/contact/" class="mobile-nav-link ${activeSlug === 'contact' ? 'active' : ''}">Contact Us</a>
@@ -229,9 +217,6 @@ function renderPage(title, activeSlug, contentHtml, description = '') {
       <a href="tel:${settings.phone_e164}" class="btn btn-secondary" style="width:100%">Call School Direct</a>
     </div>
   </aside>
-
-  <!-- Continuous Accreditation Marquee Ribbon -->
-  ${renderAccreditationMarquee()}
 
   <main id="main-content" tabindex="-1">
     ${contentHtml}
@@ -369,44 +354,92 @@ function renderPage(title, activeSlug, contentHtml, description = '') {
 // Route Builders
 function getHomeHtml() {
   return `
-  <!-- Hero Section -->
-  <section class="section" style="padding-top: 2rem;">
-    <div class="container hero-grid">
-      <div class="hero-content reveal-item">
-        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-          <span class="eyebrow" style="margin-bottom: 0;">Preschool in ${settings.area}, ${settings.city}</span>
+  <!-- School Hero Section with Interactive Tour Booking Form -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 2.5rem;">
+    <div class="container school-hero-container">
+      <div class="reveal-item">
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+          <span class="eyebrow" style="margin-bottom: 0;">Preschool in ${settings.area}, ${settings.city} • Estd. 2014</span>
           <span class="sticker-badge" style="transform:none; font-size: 0.75rem; background: var(--tint-sun); border-color: var(--sun);">
             🏆 Ranked Top 50 in Chennai
           </span>
+          <span class="sticker-badge" style="transform:none; font-size: 0.75rem; background: var(--tint-sky); border-color: var(--blue);">
+            📜 ECA India Accredited
+          </span>
         </div>
-        <h1>Where Early Curiosity Turns into <span class="highlight-squiggle">Lifelong Wonder<svg viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="var(--sun)" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
-        <p>A warm, child-centered preschool and daycare providing evidence-backed early childhood education, patient guidance, and 100% child-safe premises. Serving Annanagar West families since 2014.</p>
-        <div class="hero-actions">
-          <a href="/admissions/#visit" class="btn btn-primary">Book a School Visit</a>
-          <a href="${getWhatsAppLink()}" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-        </div>
-        <div class="hero-micro-proof">
-          <span style="color: #F7B500; font-size: 1.2rem;">★★★★★</span>
-          <strong>${settings.google_rating} on Google</strong>
-          <span>(${settings.google_review_count} verified parent reviews)</span>
-          <span style="color: var(--line);">|</span>
-          <span style="color: var(--blue); font-weight: 600;">ECA India Certified</span>
+        <h1 style="font-size: 2.5rem; line-height: 1.15; margin-bottom: 1rem;">Where Joyful Curiosity Meets <span class="highlight-squiggle">Lifelong Learning<svg viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="var(--sun)" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; color: var(--ink);">
+          A nurturing Montessori and play-based preschool in Annanagar West. With small 1:8 educator ratios, wholesome nutrition, certified early years mentors, and 100% child-safe CCTV premises, we build confident, joyful foundations.
+        </p>
+
+        <!-- Visual Hero Showcase Card -->
+        <div class="hero-visual-card">
+          <img class="hero-visual-img" src="/assets/images/hero-classroom.jpg" alt="Children engaged in Montessori learning activities in bright classroom at Global Kids" fetchpriority="high">
+          <div class="hero-visual-overlay">
+            <h3>Montessori Sensorial Discovery</h3>
+            <p>Natural daylight classrooms equipped with child-accessible wooden sensorial materials and gentle mentor guidance.</p>
+          </div>
         </div>
       </div>
-      <div class="hero-media-wrapper reveal-item">
-        <img class="hero-blob-image" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" alt="Smiling children exploring creative sensory blocks with attentive teacher" fetchpriority="high" width="800" height="600">
-        <span class="sticker-badge hero-sticker-1">${settings.years_running} Years of Joyful Care</span>
-        <span class="sticker-badge hero-sticker-2 rotate-right">${settings.ratio_text}</span>
+
+      <!-- Quick School Tour Booking Card (Hero Side Form) -->
+      <div class="reveal-item">
+        <div class="hero-tour-card">
+          <span class="hero-tour-badge">Admissions 2025–26</span>
+          <h3>Schedule a Campus Tour</h3>
+          <p>Experience our classrooms, observe active sessions, and discuss your child's milestones with our educators.</p>
+
+          <form action="/submit-enquiry" method="POST">
+            <!-- Honeypot -->
+            <input type="text" name="website_url" style="display:none;" tabindex="-1" autocomplete="off">
+
+            <div class="form-group" style="margin-bottom: 0.9rem;">
+              <label for="tour-parent-name" class="form-label" style="font-size: 0.875rem;">Parent / Guardian Name <span class="required">*</span></label>
+              <input type="text" id="tour-parent-name" name="parent_name" class="form-control" placeholder="e.g. Anand Sharma" required style="padding: 0.65rem 0.85rem;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0.9rem;">
+              <label for="tour-mobile" class="form-label" style="font-size: 0.875rem;">Mobile Number <span class="required">*</span></label>
+              <input type="tel" id="tour-mobile" name="mobile" class="form-control" placeholder="e.g. 98400 12345" required pattern="[0-9]{10}" style="padding: 0.65rem 0.85rem;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0.9rem;">
+              <label for="tour-programme" class="form-label" style="font-size: 0.875rem;">Select Programme of Interest <span class="required">*</span></label>
+              <select id="tour-programme" name="programme" class="form-control" required style="padding: 0.65rem 0.85rem;">
+                <option value="">-- Choose Programme --</option>
+                <option value="Toddlers / Playgroup (1.5 - 2.5 yrs)">Toddlers / Playgroup (1.5 – 2.5 yrs)</option>
+                <option value="Nursery / Pre-KG (2.5 - 3.5 yrs)">Nursery / Pre-KG (2.5 – 3.5 yrs)</option>
+                <option value="Junior KG / LKG (3.5 - 4.5 yrs)">Junior KG / LKG (3.5 – 4.5 yrs)</option>
+                <option value="Senior KG / UKG (4.5 - 5.5 yrs)">Senior KG / UKG (4.5 – 5.5 yrs)</option>
+                <option value="Full-Day Care (6 mos - 6 yrs)">Full-Day Care & Extended Care</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="tour-date" class="form-label" style="font-size: 0.875rem;">Preferred Tour Date</label>
+              <input type="date" id="tour-date" name="preferred_date" class="form-control" style="padding: 0.65rem 0.85rem;">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 0.85rem;">
+              Book Campus Tour Slot →
+            </button>
+          </form>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.8125rem;">
+            <span style="color: #F7B500; font-weight: 700;">★ 4.9 on Google (86 reviews)</span>
+            <a href="${getWhatsAppLink()}" target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 700; text-decoration: none;">💬 WhatsApp Direct</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Trust Strip Overlap -->
-  <div class="container trust-strip-wrapper">
+  <div class="container trust-strip-wrapper" style="margin-top: 0; margin-bottom: 2rem;">
     <div class="trust-strip-card reveal-item">
       <div class="trust-item">
         <span class="trust-number">${settings.years_running}</span>
-        <span class="trust-label">Years of Early Learning</span>
+        <span class="trust-label">Years of Early Learning Legacy</span>
       </div>
       <div class="trust-item">
         <span class="trust-number">${settings.children_taught}</span>
@@ -414,7 +447,7 @@ function getHomeHtml() {
       </div>
       <div class="trust-item">
         <span class="trust-number">1 : 8</span>
-        <span class="trust-label">Attentive Child-Educator Ratio</span>
+        <span class="trust-label">Attentive Educator Ratio</span>
       </div>
       <div class="trust-item">
         <span class="trust-number">${settings.google_rating} ★</span>
@@ -423,13 +456,279 @@ function getHomeHtml() {
     </div>
   </div>
 
-  <!-- Official Institutional Recognition & Accreditations Showcase -->
-  <section class="section accreditation-section" style="margin-top: 2rem;">
+  <!-- From the Principal's Desk Section (Classic Premier School Feature) -->
+  <section class="principals-desk-section">
+    <div class="container">
+      <div class="principals-grid reveal-item">
+        <div class="principals-photo-frame">
+          <img src="/assets/images/principal-welcome.jpg" alt="Dr. Priya Sundaram, Academic Director of Global Kids Preschool">
+          <span class="principals-badge">Academic Director & Founder</span>
+        </div>
+        <div class="principals-content">
+          <div class="principals-quote-symbol">“</div>
+          <span class="eyebrow" style="color: var(--blue);">From the Principal's Desk</span>
+          <h2>A Warm Welcome to Global Kids</h2>
+          <div class="principals-subtitle">Nurturing Character, Kindness & Joyful Confidence Since 2014</div>
+          <p>
+            At Global Kids, we believe early childhood is not a race to memorize facts or drill benchmarks. It is the sacred, magical window where a young child forms their fundamental relationship with the world—learning to trust their voice, express curiosity freely, and care for their friends.
+          </p>
+          <p>
+            Every space on our Annanagar campus is intentionally sculpted for little explorers: from child-height wooden Montessori shelves and gentle garden herb planters to our warm, patient educators who understand that learning blossoms through playful discovery.
+          </p>
+          <p>
+            We welcome you to visit our campus, observe our classrooms in action, and partner with us in shaping your child’s most formative early years.
+          </p>
+          <div class="principals-signature-block">
+            <div class="principals-name-title">
+              <strong>Dr. Priya Sundaram, M.Ed.</strong>
+              <span>Academic Director & Head of School · Global Kids Preschool</span><br>
+              <span style="font-size: 0.8rem; color: var(--blue); font-weight: 600;">Member, Early Childhood Association (ECA India & APER)</span>
+            </div>
+            <a href="/about/" class="btn btn-secondary btn-sm">Read School Philosophy →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Age-Wise Programmes with Photography -->
+  <section class="section tint-sky">
+    <div class="container">
+      <header class="section-header text-center reveal-item">
+        <span class="eyebrow">Academic Programmes</span>
+        <h2>Thoughtfully Designed Early Learning Stages</h2>
+        <p>From gentle first toddler steps to confident primary school readiness, each programme nurtures holistic growth.</p>
+      </header>
+
+      <div class="cards-grid">
+        <!-- Programme 1 -->
+        <div class="programme-card reveal-item">
+          <div style="position: relative; overflow: hidden; height: 180px;">
+            <img src="/assets/images/library-story.jpg" alt="Toddlers exploring stories and sensory play" style="width: 100%; height: 100%; object-fit: cover;">
+            <span class="programme-chip" style="position: absolute; top: 12px; left: 12px; margin: 0;">Ages 1.5 – 2.5 Years</span>
+          </div>
+          <div class="programme-body">
+            <h3 class="programme-title">Playgroup & Toddlers</h3>
+            <p class="programme-summary">Sensory exploration, gentle speech expansion, social co-play, and fine motor coordination in a cozy setting.</p>
+            <div style="font-size: 0.8125rem; color: var(--ink-soft); margin-bottom: 0.75rem;">
+              <strong>Ratio:</strong> 1:4 • <strong>Timings:</strong> 9:00 AM – 11:30 AM
+            </div>
+            <a href="/programmes/#toddler" class="programme-cta">Explore curriculum & schedule →</a>
+          </div>
+        </div>
+
+        <!-- Programme 2 -->
+        <div class="programme-card reveal-item">
+          <div style="position: relative; overflow: hidden; height: 180px;">
+            <img src="/assets/images/hero-classroom.jpg" alt="Pre-KG Nursery children engaged in phonics and numbers" style="width: 100%; height: 100%; object-fit: cover;">
+            <span class="programme-chip" style="position: absolute; top: 12px; left: 12px; margin: 0;">Ages 2.5 – 3.5 Years</span>
+          </div>
+          <div class="programme-body">
+            <h3 class="programme-title">Pre-KG / Nursery</h3>
+            <p class="programme-summary">Tactile phonics, number discovery, dramatic expression, and social confidence with hands-on Montessori manipulatives.</p>
+            <div style="font-size: 0.8125rem; color: var(--ink-soft); margin-bottom: 0.75rem;">
+              <strong>Ratio:</strong> 1:6 • <strong>Timings:</strong> 9:00 AM – 12:00 PM
+            </div>
+            <a href="/programmes/#nursery" class="programme-cta">Explore curriculum & schedule →</a>
+          </div>
+        </div>
+
+        <!-- Programme 3 -->
+        <div class="programme-card reveal-item">
+          <div style="position: relative; overflow: hidden; height: 180px;">
+            <img src="/assets/images/outdoor-play.jpg" alt="Kindergarten children doing outdoor active play" style="width: 100%; height: 100%; object-fit: cover;">
+            <span class="programme-chip" style="position: absolute; top: 12px; left: 12px; margin: 0;">Ages 3.5 – 5.5 Years</span>
+          </div>
+          <div class="programme-body">
+            <h3 class="programme-title">Kindergarten (LKG & UKG)</h3>
+            <p class="programme-summary">Foundational literacy, early STEM inquiry, logical math concepts, and holistic readiness for primary school boards.</p>
+            <div style="font-size: 0.8125rem; color: var(--ink-soft); margin-bottom: 0.75rem;">
+              <strong>Ratio:</strong> 1:8 • <strong>Timings:</strong> 9:00 AM – 1:00 PM
+            </div>
+            <a href="/programmes/#kindergarten" class="programme-cta">Explore curriculum & schedule →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="/programmes/" class="btn btn-secondary">View All Programmes, Comparison Table & Daycare →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Life & Photographic Gallery (Show, Don't Just Tell!) -->
+  <section class="campus-gallery-section">
+    <div class="container">
+      <header class="section-header text-center reveal-item">
+        <span class="eyebrow">Campus Life & Facilities</span>
+        <h2>A Glimpse into Our Joyful Learning Campus</h2>
+        <p>Purpose-built spaces designed for safety, creative discovery, and early sensory exploration.</p>
+      </header>
+
+      <div class="campus-gallery-grid reveal-item">
+        <!-- Photo 1 -->
+        <div class="campus-gallery-card">
+          <img src="/assets/images/hero-classroom.jpg" alt="Montessori sensory lab with wooden materials">
+          <div class="campus-gallery-body">
+            <span class="campus-gallery-tag">Montessori Learning</span>
+            <h4>Tactile Sensory Discovery Lab</h4>
+            <p>Child-height wooden open shelving with sandpaper letters, bead stairs, and math puzzles.</p>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="campus-gallery-card">
+          <img src="/assets/images/outdoor-play.jpg" alt="Outdoor grass play lawn with shade sails">
+          <div class="campus-gallery-body">
+            <span class="campus-gallery-tag">Outdoor Recreation</span>
+            <h4>Lush Green Play Arena & Sandpit</h4>
+            <p>UV-shielded outdoor area with soft safety lawn, river sand pit, and gross-motor climbing frames.</p>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="campus-gallery-card">
+          <img src="/assets/images/library-story.jpg" alt="Cozy reading nook with teacher reading picture books">
+          <div class="campus-gallery-body">
+            <span class="campus-gallery-tag">Early Literacy</span>
+            <h4>Little Sprouts Story & Phonics Nook</h4>
+            <p>Cushioned reading circle where children enjoy daily bilingual puppet stories and picture books.</p>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="campus-gallery-card">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Sensory water wheel and garden play">
+          <div class="campus-gallery-body">
+            <span class="campus-gallery-tag">Sensory Exploration</span>
+            <h4>Splash & Water Play Tables</h4>
+            <p>Safe water wheels and sensory discovery tables fostering physics curiosity and peer collaboration.</p>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="campus-gallery-card">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Calm sanitized toddler nap suites">
+          <div class="campus-gallery-body">
+            <span class="campus-gallery-tag">Daycare & Rest</span>
+            <h4>Air-Purified Cozy Nap Suites</h4>
+            <p>Individual organic cotton cots, dimmable acoustic insulation, and HEPA air purification.</p>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="campus-gallery-card">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Hygienic snack and fruit dining corner">
+          <div class="campus-gallery-body">
+            <span class="campus-gallery-tag">Health & Dining</span>
+            <h4>Child-Scale Dining & Handwash Hub</h4>
+            <p>Wholesome fruit breaks and supervised handwash stations building lifelong self-hygiene habits.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/gallery/" class="btn btn-secondary">Explore Complete Campus Photo Gallery →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- School Notice Board & Upcoming Events (Inspired by DPS Bangalore & Montfort School) -->
+  <section class="school-notice-section">
+    <div class="container">
+      <header class="section-header text-center reveal-item">
+        <span class="eyebrow">School Communications</span>
+        <h2>Notice Board & School Happenings</h2>
+        <p>Keep up with official announcements, academic circulars, and upcoming campus celebrations.</p>
+      </header>
+
+      <div class="notice-columns-grid reveal-item">
+        <!-- Column 1: Circulars & Notices -->
+        <div class="notice-col-card">
+          <div class="notice-col-header">
+            <h3>📢 Circulars & Announcements</h3>
+            <a href="/news/" style="font-size: 0.8125rem; font-weight: 700; color: var(--blue); text-decoration: none;">View Archive →</a>
+          </div>
+
+          <div class="notice-item">
+            <div class="notice-date-badge">12 OCT<br><span style="font-size: 0.65rem;">2026</span></div>
+            <div class="notice-info">
+              <h4>
+                <a href="/admissions/">Admissions 2025–26: Guidelines & Document Checklist</a>
+                <span class="notice-pill-new">NEW</span>
+              </h4>
+              <p>Applications open for Toddlers, Nursery & KG batches. Limited seats per batch to preserve 1:8 ratio.</p>
+            </div>
+          </div>
+
+          <div class="notice-item">
+            <div class="notice-date-badge">05 OCT<br><span style="font-size: 0.65rem;">2026</span></div>
+            <div class="notice-info">
+              <h4><a href="/news/">Parent Orientation & Phased Settling Schedule</a></h4>
+              <p>Staggered 4-day orientation timetable for incoming parents to ensure tear-free settling transitions.</p>
+            </div>
+          </div>
+
+          <div class="notice-item">
+            <div class="notice-date-badge">28 SEP<br><span style="font-size: 0.65rem;">2026</span></div>
+            <div class="notice-info">
+              <h4><a href="/facilities-safety/">Health Advisory: Monsoon Air Filtration & Sanitization</a></h4>
+              <p>Hospital-grade UV sanitization and daily pediatric temperature checks active on campus.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Upcoming School Events -->
+        <div class="notice-col-card">
+          <div class="notice-col-header">
+            <h3>📅 Upcoming School Events</h3>
+            <a href="/news/" style="font-size: 0.8125rem; font-weight: 700; color: var(--blue); text-decoration: none;">Full Calendar →</a>
+          </div>
+
+          <div class="notice-item">
+            <div class="event-date-block">
+              <span class="event-day">25</span>
+              <span class="event-month">OCT</span>
+            </div>
+            <div class="notice-info">
+              <h4>Grandparents' Day & Story Circle</h4>
+              <p>Time: 9:30 AM – 11:30 AM • An affectionate morning celebrating grandparents with puppet theater and clay art.</p>
+            </div>
+          </div>
+
+          <div class="notice-item">
+            <div class="event-date-block">
+              <span class="event-day">08</span>
+              <span class="event-month">NOV</span>
+            </div>
+            <div class="notice-info">
+              <h4>Montessori Sensory Open Day & Workshop</h4>
+              <p>Time: 10:00 AM – 1:00 PM • Prospective parents experience hands-on tactile materials alongside educators.</p>
+            </div>
+          </div>
+
+          <div class="notice-item">
+            <div class="event-date-block">
+              <span class="event-day">22</span>
+              <span class="event-month">NOV</span>
+            </div>
+            <div class="notice-info">
+              <h4>Little Sprouts Annual Movement Gala</h4>
+              <p>Time: 8:30 AM – 11:00 AM • Non-competitive fun obstacle courses, balance games, and music celebration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Institutional Recognition & Accreditations (Static, Prestigious Seals) -->
+  <section class="section accreditation-section">
     <div class="container">
       <header class="accreditation-header reveal-item">
         <span class="eyebrow">Institutional Standing & Accreditations</span>
         <h2>Recognized for Excellence in Early Childhood Education</h2>
-        <p style="max-width: 60ch; margin: 0.5rem auto 0 auto;">Proudly evaluated, accredited, and verified by national preparatory education associations and child safety councils.</p>
+        <p style="max-width: 60ch; margin: 0.5rem auto 0 auto;">Evaluated and accredited by leading national early childhood care associations and child safety councils.</p>
       </header>
 
       <div class="accreditation-grid reveal-item">
@@ -468,269 +767,6 @@ function getHomeHtml() {
     </div>
   </section>
 
-  <!-- Interactive Campus Spaces Explorer -->
-  <section class="section">
-    <div class="container">
-      <header class="section-header text-center reveal-item">
-        <span class="eyebrow">Interactive Campus Tour</span>
-        <h2>Explore Purpose-Built Spaces for Little Hands & Minds</h2>
-        <p>Switch between our dedicated learning zones to inspect our tactile environments and safety engineering.</p>
-      </header>
-
-      <div class="campus-spaces-container reveal-item">
-        <div class="spaces-tab-bar" role="tablist" aria-label="Campus Spaces Navigation">
-          <button type="button" class="space-tab-btn active" data-target-panel="panel-montessori">
-            🧩 Montessori Discovery Lab
-          </button>
-          <button type="button" class="space-tab-btn" data-target-panel="panel-sensory">
-            🌿 Outdoor Splash & Sand Oasis
-          </button>
-          <button type="button" class="space-tab-btn" data-target-panel="panel-naps">
-            🌙 Air-Purified Nap Suites
-          </button>
-          <button type="button" class="space-tab-btn" data-target-panel="panel-dining">
-            🍎 Nutri-Dining Corner
-          </button>
-          <button type="button" class="space-tab-btn" data-target-panel="panel-gym">
-            🤸 Gross-Motor Arena
-          </button>
-        </div>
-
-        <!-- Panel 1: Montessori Discovery Lab -->
-        <div id="panel-montessori" class="space-panel-content active">
-          <div class="space-panel-media">
-            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" alt="Child exploring Montessori wooden sorting materials">
-            <span class="space-panel-badge">Ages 1.5 – 6 Years</span>
-          </div>
-          <div class="space-panel-details">
-            <span class="eyebrow" style="align-self: flex-start; margin-bottom: 0;">Cognitive Learning</span>
-            <h3>Montessori Tactile Discovery Lab</h3>
-            <p>Natural daylight classrooms equipped with imported Beechwood sensorial cylinders, sandpaper phonics letters, bead stair math manipulatives, and low open shelving empowering independent choice.</p>
-            <ul class="space-specs-list">
-              <li class="space-spec-item"><span class="icon-check">✔</span> Child-height accessible materials encouraging intrinsic choice</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Rounded corner furniture crafted with non-toxic organic beeswax finish</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Cozy reading nooks with curated picture books in English & regional stories</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Panel 2: Outdoor Splash & Sand Oasis -->
-        <div id="panel-sensory" class="space-panel-content">
-          <div class="space-panel-media">
-            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80" alt="Children enjoying safe outdoor sensory sandpit">
-            <span class="space-panel-badge">Outdoor Shaded Play</span>
-          </div>
-          <div class="space-panel-details">
-            <span class="eyebrow" style="align-self: flex-start; margin-bottom: 0;">Sensory Motor</span>
-            <h3>Splash, Sand & Nature Discovery Garden</h3>
-            <p>Protected from direct harsh afternoon sun by UV-filtering tensile pergolas. Children build sandcastles, explore water wheel flow dynamics, and touch aromatic sensory herb planters.</p>
-            <ul class="space-specs-list">
-              <li class="space-spec-item"><span class="icon-check">✔</span> Sterilized, fine-grain Australian river sand filtered bi-weekly</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Low splash tables with warm RO water for safe sensory immersion</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Herb discovery garden: tulsi, mint, touch-me-not, and cherry tomatoes</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Panel 3: Air-Purified Nap Suites -->
-        <div id="panel-naps" class="space-panel-content">
-          <div class="space-panel-media">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Calm and sanitized toddler nap suites">
-            <span class="space-panel-badge">Rest & Daycare Suite</span>
-          </div>
-          <div class="space-panel-details">
-            <span class="eyebrow" style="align-self: flex-start; margin-bottom: 0;">Restful Restoration</span>
-            <h3>Air-Purified Cozy Nap Suites</h3>
-            <p>Designed for peaceful afternoon sleep routines. Individual organic cotton bedding, ambient temperature regulation, and HEPA air purification ensuring clean, allergen-free air.</p>
-            <ul class="space-specs-list">
-              <li class="space-spec-item"><span class="icon-check">✔</span> Dedicated assigned cots with sanitized personalized bed linens</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Continuous female caregiver supervision and gentle soothing back pats</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Calming ambient white-noise and instrumental lullaby soundscapes</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Panel 4: Nutri-Dining Corner -->
-        <div id="panel-dining" class="space-panel-content">
-          <div class="space-panel-media">
-            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Nutritious fruit and warm snack dining table">
-            <span class="space-panel-badge">Healthy Nutrition</span>
-          </div>
-          <div class="space-panel-details">
-            <span class="eyebrow" style="align-self: flex-start; margin-bottom: 0;">Dietary Wellbeing</span>
-            <h3>Hygienic Nutri-Dining Corner</h3>
-            <p>Nutritionist-designed daily snack schedules featuring fresh cut fruits, warm ragi porridge, steamed sweet corn, and wholesome multigrain treats. Fosters positive eating habits and table etiquette.</p>
-            <ul class="space-specs-list">
-              <li class="space-spec-item"><span class="icon-check">✔</span> Zero refined white sugar; only natural jaggery and fresh fruit sweetness</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Strict separation for children with allergy specifications (dairy, nuts)</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Handwashing songs and self-feeding encouragement by educators</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Panel 5: Gross-Motor Arena -->
-        <div id="panel-gym" class="space-panel-content">
-          <div class="space-panel-media">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Children engaged in safe indoor motor skills arena">
-            <span class="space-panel-badge">Active Movement</span>
-          </div>
-          <div class="space-panel-details">
-            <span class="eyebrow" style="align-self: flex-start; margin-bottom: 0;">Physical Development</span>
-            <h3>Indoor Gross-Motor Movement Arena</h3>
-            <p>High-density foam tumbling blocks, low balance beams, climbing arches, and hopscotch trails building core balance, vestibular coordination, and confidence.</p>
-            <ul class="space-specs-list">
-              <li class="space-spec-item"><span class="icon-check">✔</span> Shock-absorbent 30mm rubber floor underlay across the entire arena</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Daily guided music & movement routines and animal yoga poses</li>
-              <li class="space-spec-item"><span class="icon-check">✔</span> Rainproof indoor recreation during monsoon days</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Child Milestone Calculator Widget & Programmes -->
-  <section class="section tint-sky">
-    <div class="container">
-      <div class="hero-grid" style="align-items: center; margin-bottom: 3rem;">
-        <div>
-          <span class="eyebrow">Interactive Assessment</span>
-          <h2>Find the Right Programme for Your Child</h2>
-          <p>Select your child's age band to see tailored milestones, classroom timings, teacher ratios, and our gentle settling transition protocol.</p>
-        </div>
-        <div>
-          <div class="calc-card reveal-item">
-            <label for="calc-age-select" class="form-label" style="color: var(--ink);">Select Your Child's Age Band:</label>
-            <select id="calc-age-select" class="form-control" style="font-weight: 600;">
-              <option value="toddler">Toddler (1.5 – 2.5 Years)</option>
-              <option value="playgroup" selected>Playgroup (2.0 – 3.0 Years)</option>
-              <option value="nursery">Nursery (3.0 – 4.0 Years)</option>
-              <option value="kindergarten">Kindergarten (4.0 – 6.0 Years)</option>
-              <option value="daycare">Daycare & Extended Care (1.5 – 10 Years)</option>
-            </select>
-
-            <div id="calc-result-display" class="calc-result-box">
-              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--line); padding-bottom: 0.75rem;">
-                <strong style="font-family: var(--font-head); font-size: 1.15rem; color: var(--blue);">Playgroup Pioneers (2.0 – 3.0 yrs)</strong>
-                <span class="sticker-badge" style="transform:none;">1:7 Educator Ratio</span>
-              </div>
-              <div style="font-size: var(--fs-sm); color: var(--ink); margin-top: 0.5rem;">
-                <strong>Classroom Timings:</strong> 09:00 AM – 12:00 PM
-              </div>
-              <div style="font-size: var(--fs-sm); color: var(--ink-soft); margin-top: 0.25rem;">
-                <strong>Key Milestone Focus:</strong> Phonemic rhythm songs, 2-word phrase sentences, shape sorting, independent handwashing, and peer sharing.
-              </div>
-              <div style="font-size: var(--fs-xs); color: var(--ok); font-weight: 600; margin-top: 0.4rem;">
-                ✔ Gentle Settling Protocol: 4-day staggered transition with dedicated settling buddy educator.
-              </div>
-              <div style="margin-top: 1rem;">
-                <a href="/admissions/?programme=Playgroup%20Pioneers%20(2%20-%203%20yrs)#visit" class="btn btn-primary btn-sm">Schedule Visit for this Batch →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Programmes Cards -->
-      <div class="cards-grid">
-        ${content.programmes.slice(0, 3).map(p => `
-          <a href="/programmes/#${p.slug}" class="programme-card reveal-item">
-            <div style="background: var(--tint-sky); padding: 1.5rem; display: flex; align-items: center; justify-content: center; height: 160px; color: var(--blue);">
-              ${icons[p.icon] || icons.sparkles}
-            </div>
-            <div class="programme-body">
-              <span class="programme-chip">${p.age_band}</span>
-              <h3 class="programme-title">${p.title}</h3>
-              <p class="programme-summary">${p.summary}</p>
-              <span class="programme-cta">Explore schedule & curriculum →</span>
-            </div>
-          </a>
-        `).join('')}
-      </div>
-    </div>
-  </section>
-
-  <!-- Localized Infrastructure & Transport Ribbon -->
-  <div class="container" style="margin-top: -1rem; margin-bottom: 2rem;">
-    <div class="infra-ribbon reveal-item">
-      <div class="infra-item">
-        <span>📍</span>
-        <span>Opposite Tower Park Green Gate · 400m from Annanagar Tower Metro</span>
-      </div>
-      <div class="infra-item">
-        <span>🚗</span>
-        <span>Private Gated On-Campus Drop-off Driveway (Zero Road Hazard)</span>
-      </div>
-      <div class="infra-item">
-        <span>🚌</span>
-        <span>GPS Live-Tracked AC Vans with Female Attendants (Annanagar, Mogappair, Kilpauk)</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Day Timeline -->
-  <section class="section tint-mint">
-    <div class="container">
-      <header class="section-header text-center reveal-item">
-        <span class="eyebrow">Daily Rhythm</span>
-        <h2>A Typical Morning at Global Kids</h2>
-        <p>Predictable routines foster emotional security and joyful active engagement.</p>
-      </header>
-      <div class="timeline-container reveal-item">
-        <div class="timeline-step">
-          <span class="timeline-time">08:30 AM</span>
-          <h4>Warm Welcome & Circle</h4>
-          <p>Gentle greetings, morning bilingual songs, and emotional check-in with lead teachers.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">09:15 AM</span>
-          <h4>Phonics & Discovery</h4>
-          <p>Hands-on literacy activities, tactile phonics cards, and language discovery.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">10:15 AM</span>
-          <h4>Hygiene & Fruit Break</h4>
-          <p>Supervised handwashing, wholesome fruit snack, and joyful table manners.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">10:45 AM</span>
-          <h4>Outdoor Sand & Motor Play</h4>
-          <p>Gross motor coordination, sensory water table, and active climbing frames.</p>
-        </div>
-        <div class="timeline-step">
-          <span class="timeline-time">11:45 AM</span>
-          <h4>Story & Reflection</h4>
-          <p>Interactive puppet storytelling, rhyme recap, and peaceful pack-up time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Founder Note -->
-  <section class="section">
-    <div class="container">
-      <div class="hero-grid" style="align-items: center;">
-        <div class="reveal-item">
-          <img class="hero-blob-image" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Shanmuga Praba S, Founder of Global Kids Preschool" width="600" height="600">
-        </div>
-        <div class="reveal-item">
-          <span class="eyebrow">A Note from Our Founder</span>
-          <h2>"Early childhood is not a race; it is a sacred window of discovery."</h2>
-          <p style="margin-bottom: 1rem;">
-            When we founded Global Kids in 2014, our promise was clear: create an environment where children feel as secure and deeply loved as they do at home, while providing world-class early pedagogical stimulation.
-          </p>
-          <p style="margin-bottom: 1.5rem;">
-            Being recognized among the Top 50 preschools in Chennai is a testament to the patient dedication of our educators and the unwavering trust of over 1,200 Annanagar families.
-          </p>
-          <div>
-            <strong style="font-family: var(--font-head); font-size: 1.15rem; color: var(--ink);">Shanmuga Praba S., M.Ed</strong><br>
-            <span style="font-size: var(--fs-sm); color: var(--ink-soft);">Founder & Head of School · Global Kids Preschool (Estd. 2014)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Reviews Preview -->
   <section class="section tint-blush">
     <div class="container">
@@ -761,82 +797,21 @@ function getHomeHtml() {
     </div>
   </section>
 
-  <!-- 4-Step Admissions -->
-  <section class="section tint-sun">
+  <!-- Direct School Tour Action Banner -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
     <div class="container">
-      <header class="section-header text-center reveal-item">
-        <span class="eyebrow">Simple Enrollment</span>
-        <h2>Admissions in 4 Thoughtful Steps</h2>
-        <p>No stressful entrance exams. We prioritize understanding your child and family values.</p>
-      </header>
-      <div class="steps-grid">
-        <div class="step-card reveal-item">
-          <div class="step-num-badge">1</div>
-          <h3>Schedule Campus Visit</h3>
-          <p>Book a slot online or connect on WhatsApp. See live classes and meet teachers.</p>
-        </div>
-        <div class="step-card reveal-item">
-          <div class="step-num-badge">2</div>
-          <h3>Interactive Orientation</h3>
-          <p>Gentle meeting between child, parents, and Head of School to assess child readiness.</p>
-        </div>
-        <div class="step-card reveal-item">
-          <div class="step-num-badge">3</div>
-          <h3>Registration & Docs</h3>
-          <p>Submit basic documents (birth certificate & immunization record). Zero hidden fees.</p>
-        </div>
-        <div class="step-card reveal-item">
-          <div class="step-num-badge">4</div>
-          <h3>Gradual Settling In</h3>
-          <p>Staggered 60-minute settling sessions to ensure tear-free joyful transitions.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="/admissions/#visit" class="btn btn-primary">Start Admission Process Today</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Top FAQs -->
-  <section class="section">
-    <div class="container container-narrow">
-      <header class="section-header text-center reveal-item">
-        <span class="eyebrow">Frequently Answered</span>
-        <h2>Common Questions from Parents</h2>
-      </header>
-      <div class="faq-list reveal-item">
-        ${content.faqs.slice(0, 5).map(f => `
-          <details class="faq-item">
-            <summary class="faq-summary">
-              <span>${f.question}</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-content">
-              <p>${f.answer}</p>
-            </div>
-          </details>
-        `).join('')}
-      </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/admissions/#faq" class="btn btn-secondary">Read Comprehensive Admissions FAQs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA Band -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="cta-band reveal-item">
+      <div class="school-action-banner reveal-item">
         <h2>Experience the Warmth of Our Campus in Person</h2>
-        <p style="max-width: 50ch;">Walk through our naturally lit classrooms, open sensory gardens, and meet our passionate educators.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-          <a href="/admissions/#visit" class="btn btn-primary">Book a Campus Tour</a>
+        <p>Walk through our naturally lit classrooms, open sensory gardens, and meet our passionate educators. Admissions are currently open for 2025–26.</p>
+        <div class="school-action-buttons">
+          <a href="/admissions/#visit" class="btn btn-primary" style="background: var(--sun); color: var(--on-sun);">Book a Campus Tour</a>
           <a href="${getWhatsAppLink()}" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-          <a href="tel:${settings.phone_e164}" class="btn btn-secondary">Call ${settings.phone_display}</a>
+          <a href="tel:${settings.phone_e164}" class="btn btn-secondary" style="color: #FFFFFF; border-color: rgba(255,255,255,0.4);">Call Admissions: ${settings.phone_display}</a>
         </div>
       </div>
     </div>
-  </section>`;
+  </section>
+  `;
 }
 
 function getProgrammesHtml() {
@@ -1670,7 +1645,11 @@ const server = http.createServer((req, res) => {
         '.js': 'application/javascript; charset=utf-8',
         '.json': 'application/json; charset=utf-8',
         '.svg': 'image/svg+xml',
-        '.woff2': 'font/woff2'
+        '.woff2': 'font/woff2',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.png': 'image/png',
+        '.webp': 'image/webp'
       };
       res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'text/plain' });
       return fs.createReadStream(filePath).pipe(res);

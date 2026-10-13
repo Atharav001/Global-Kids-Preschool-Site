@@ -5,7 +5,29 @@
 
 $school_name = gk_setting('school_name', 'Global Kids Preschool');
 $tagline = gk_setting('tagline', 'Where Joy Meets Early Learning');
+$phone = gk_setting('phone_e164', '+91 98400 12345');
+$area = gk_setting('area', 'Annanagar West');
+$city = gk_setting('city', 'Chennai');
+$wa_link = gk_whatsapp_link();
 ?>
+<!-- Institutional School Top Utility Bar -->
+<div class="school-top-utility" role="region" aria-label="<?php esc_attr_e('School Quick Contact', 'gk-theme'); ?>">
+    <div class="container school-utility-inner">
+        <div class="utility-left">
+            <span><strong>📞 Admissions Helpline:</strong> <a href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_html($phone); ?></a></span>
+            <span class="utility-divider">|</span>
+            <span><strong>⏰ Hours:</strong> Mon–Sat 8:30 AM – 4:30 PM</span>
+            <span class="utility-divider">|</span>
+            <span><strong>📍 Campus:</strong> <?php echo esc_html($area . ', ' . $city); ?></span>
+        </div>
+        <div class="utility-right">
+            <span class="utility-badge">Admissions 2025–26 Open</span>
+            <a href="<?php echo esc_url(home_url('/parent-corner/')); ?>" class="utility-link">Parent Portal 🔒</a>
+            <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="utility-link utility-wa">WhatsApp Us</a>
+        </div>
+    </div>
+</div>
+
 <header class="site-header" role="banner">
     <div class="container header-inner">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="brand-logo" aria-label="<?php echo esc_attr($school_name); ?>">
