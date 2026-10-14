@@ -1374,13 +1374,13 @@ a:hover {
 
 .form-grid-2 {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s-4);
 }
 
 @media (min-width: 48em) {
   .form-grid-2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -1388,6 +1388,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
+  min-width: 0;
 }
 
 .form-label {
@@ -1403,6 +1404,9 @@ a:hover {
 
 .form-control {
   min-height: 52px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0 var(--s-4);
   font-family: var(--font-body);
   font-size: var(--fs-base);
@@ -1532,20 +1536,26 @@ textarea.form-control {
 /* Gallery Grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s-4);
 }
 
 @media (min-width: 48em) {
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--s-6);
   }
 }
 
 @media (min-width: 64em) {
   .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 84em) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -1633,19 +1643,19 @@ textarea.form-control {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s-8);
 }
 
 @media (min-width: 48em) {
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 64em) {
   .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr);
   }
 }
 
@@ -1852,14 +1862,14 @@ textarea.form-control {
 /* 2. School Hero & Tour Booking Form */
 .school-hero-container {
   display: grid;
-  grid-template-columns: 1.25fr 0.95fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 960px) {
   .school-hero-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
   }
 }
 
@@ -1945,15 +1955,15 @@ textarea.form-control {
 
 .principals-grid {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 3.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
   align-items: center;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 768px) {
   .principals-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 3.5rem;
   }
 }
 
@@ -2049,20 +2059,20 @@ textarea.form-control {
 
 .campus-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 600px) {
   .campus-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 900px) {
   .campus-gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -2124,14 +2134,14 @@ textarea.form-control {
 
 .notice-columns-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
   margin-top: 2rem;
 }
 
-@media (max-width: 850px) {
+@media (min-width: 850px) {
   .notice-columns-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -2751,14 +2761,14 @@ textarea.form-control {
 /* Split (image + text) */
 .split-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
 }
 
 @media (min-width: 900px) {
   .split-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 3.5rem;
   }
   .split-grid.reverse > *:first-child { order: 2; }
@@ -2885,7 +2895,7 @@ textarea.form-control {
 
 .process-step {
   display: grid;
-  grid-template-columns: 56px 1fr;
+  grid-template-columns: 46px minmax(0, 1fr);
   gap: 1.25rem;
   padding: 1.5rem;
   border-bottom: 1px solid var(--line);
@@ -2992,14 +3002,14 @@ textarea.form-control {
 /* Sidebar layout for admissions/contact */
 .sidebar-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
   align-items: start;
 }
 
 @media (min-width: 960px) {
   .sidebar-layout {
-    grid-template-columns: 1.6fr 1fr;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   }
 }
 
@@ -3008,6 +3018,7 @@ textarea.form-control {
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
   padding: 1.5rem;
+  min-width: 0;
 }
 
 .side-card h3 {
