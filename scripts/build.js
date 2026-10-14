@@ -16,4 +16,8 @@ execSync('node scripts/contrast-check.js', { stdio: 'inherit' });
 console.log('\nPackaging WordPress Theme & Plugin distribution archives...');
 require('./package-zips.js');
 
+// 3. Static site for Vercel / static hosts
+console.log('\nExporting static preview site to public/...');
+require('./export-static.js');
+
 console.log('\nBuild completed successfully!');

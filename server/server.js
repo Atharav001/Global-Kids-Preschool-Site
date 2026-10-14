@@ -1570,6 +1570,30 @@ const ROUTES = {
 
 let currentQuery = {};
 
+function resolvePage(pathname, query = {}) {
+  currentQuery = query;
+  const route = ROUTES[pathname];
+  let status = 200;
+  let result;
+
+  if (route) {
+    result = route();
+  } else {
+    status = 404;
+    result = { title: 'Page Not Found', active: '404', html: get404Html() };
+  }
+
+  const html = renderPage({
+    title: result.title,
+    active: result.active,
+    contentHtml: result.html,
+  });
+
+  return { html, status };
+}
+
+module.exports = { ROUTES, resolvePage };
+
 /* ------------------------------------------------------------------ *
  * Static assets
  * ------------------------------------------------------------------ */
@@ -1622,30 +1646,17 @@ const server = http.createServer((req, res) => {
 
   currentQuery = Object.fromEntries(parsedUrl.searchParams);
 
-  const route = ROUTES[pathname];
-  let status = 200;
-  let result;
-
-  if (route) {
-    result = route();
-  } else {
-    status = 404;
-    result = { title: 'Page Not Found', active: '404', html: get404Html() };
-  }
-
-  const html = renderPage({
-    title: result.title,
-    active: result.active,
-    contentHtml: result.html,
-  });
+  const { html, status } = resolvePage(pathname, currentQuery);
 
   res.writeHead(status, { 'Content-Type': 'text/html; charset=utf-8' });
   res.end(html);
 });
 
-server.listen(PORT, () => {
-  console.log('\n======================================================');
-  console.log('  Global Kids Preschool — Preview Server Running');
-  console.log(`  http://localhost:${PORT}`);
-  console.log('======================================================\n');
-});
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log('\n======================================================');
+    console.log('  Global Kids Preschool — Preview Server Running');
+    console.log(`  http://localhost:${PORT}`);
+    console.log('======================================================\n');
+  });
+}

@@ -27,6 +27,7 @@ Thumbs.db
 
 # Build artifacts
 dist/
+public/
 assets/dist/
 build/
 .wp-env/

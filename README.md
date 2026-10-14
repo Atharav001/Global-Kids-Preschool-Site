@@ -72,7 +72,7 @@ npm test
 
 ## 📦 Building Deployment Packages
 
-To generate deployable production zip archives for Hostinger:
+To generate deployable production zip archives for Hostinger **and** the static Vercel preview:
 
 ```bash
 npm run build
@@ -81,6 +81,11 @@ npm run build
 Outputs:
 - `dist/gk-theme.zip` (Custom classic theme with `theme.json`)
 - `dist/gk-core.zip` (Companion plugin with settings, CPTs, and security hardening)
+- `public/` (Pre-rendered static site for Vercel — generated at build time, not committed)
+
+### Deploy on Vercel
+
+Connect this repo to Vercel. `vercel.json` sets `outputDirectory` to `public` and runs `npm run build` so the static export is created on each deploy. Enquiry form POSTs are handled by `api/submit-enquiry.js`.
 
 ---
 
