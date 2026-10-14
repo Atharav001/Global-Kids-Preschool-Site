@@ -54,6 +54,16 @@
     });
   }
 
+  // 2b. Mobile Navigation Sub-menu Accordion
+  document.querySelectorAll('.mobile-nav-group-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const group = toggle.closest('.mobile-nav-group');
+      if (!group) return;
+      const isOpen = group.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
   // 3. Mobile Sticky Action Bar - Hide on Input Focus
   const stickyBar = document.querySelector('.sticky-action-bar');
   if (stickyBar) {

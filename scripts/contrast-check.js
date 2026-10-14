@@ -32,29 +32,30 @@ function contrast(hex1, hex2) {
 }
 
 const colors = {
-  bg: '#FFF8EC',
+  bg: '#F3F5F9',
   surface: '#FFFFFF',
-  ink: '#2B2A35',
-  inkSoft: '#5B596A',
-  sun: '#FFC93C',
-  onSun: '#2B2A35',
-  blue: '#2A62D8',
-  tintSky: '#E6F3FF',
-  tintMint: '#E3F6EA',
-  tintBlush: '#FFE7DF',
-  tintLilac: '#EEE8FF',
-  tintSun: '#FFF0BF'
+  ink: '#17233D',
+  inkSoft: '#56617A',
+  sun: '#E7A100',
+  onSun: '#17233D',
+  blue: '#1E4FA3',
+  navy900: '#0E1E42',
+  tintSky: '#EAF1FB',
+  tintMint: '#E8F4EE',
+  tintBlush: '#FBEDEA',
+  tintLilac: '#EFEDFA',
+  tintSun: '#FBF2D9'
 };
 
 const checks = [
-  { name: 'Ink on Cream BG (body)', fg: colors.ink, bg: colors.bg, min: 4.5 },
+  { name: 'Ink on App BG (body)', fg: colors.ink, bg: colors.bg, min: 4.5 },
   { name: 'Ink on White Surface (body)', fg: colors.ink, bg: colors.surface, min: 4.5 },
-  { name: 'Ink Soft on Cream BG (secondary)', fg: colors.inkSoft, bg: colors.bg, min: 4.5 },
+  { name: 'Ink Soft on App BG (secondary)', fg: colors.inkSoft, bg: colors.bg, min: 4.5 },
   { name: 'Ink Soft on White Surface (secondary)', fg: colors.inkSoft, bg: colors.surface, min: 4.5 },
   { name: 'On-Sun Text on Sun Button', fg: colors.onSun, bg: colors.sun, min: 4.5 },
-  { name: 'Trust Blue on Cream BG (headings/links)', fg: colors.blue, bg: colors.bg, min: 4.5 },
+  { name: 'Trust Blue on App BG (headings/links)', fg: colors.blue, bg: colors.bg, min: 4.5 },
   { name: 'Trust Blue on White Surface', fg: colors.blue, bg: colors.surface, min: 4.5 },
-  { name: 'White Text on Dark Footer Ink', fg: '#FFFFFF', bg: colors.ink, min: 4.5 },
+  { name: 'White Text on Navy Footer', fg: '#FFFFFF', bg: colors.navy900, min: 4.5 },
   { name: 'Ink on Sky Tint', fg: colors.ink, bg: colors.tintSky, min: 4.5 },
   { name: 'Ink on Mint Tint', fg: colors.ink, bg: colors.tintMint, min: 4.5 },
   { name: 'Ink on Blush Tint', fg: colors.ink, bg: colors.tintBlush, min: 4.5 },

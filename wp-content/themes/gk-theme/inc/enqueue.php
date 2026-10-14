@@ -10,10 +10,10 @@ if (!defined('ABSPATH')) {
 function gk_theme_scripts() {
     $theme_version = '1.0.0';
 
-    // Google Fonts (Fredoka 600, Nunito 400,600,700) with swap
+    // Google Fonts (Plus Jakarta Sans for headings, Inter for body) with swap
     wp_enqueue_style(
         'gk-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap',
         [],
         null
     );

@@ -9,35 +9,37 @@
       "defaultGradients": false,
       "defaultPalette": false,
       "palette": [
-        { "slug": "bg", "color": "#FFF8EC", "name": "Background Cream" },
+        { "slug": "bg", "color": "#F3F5F9", "name": "Background Mist" },
         { "slug": "surface", "color": "#FFFFFF", "name": "Surface White" },
-        { "slug": "ink", "color": "#2B2A35", "name": "Ink Charcoal" },
-        { "slug": "ink-soft", "color": "#5B596A", "name": "Ink Soft Slate" },
-        { "slug": "line", "color": "#EADFC9", "name": "Border Line" },
-        { "slug": "sun", "color": "#FFC93C", "name": "Sun Yellow (Primary)" },
-        { "slug": "sun-hover", "color": "#F7B500", "name": "Sun Yellow Hover" },
-        { "slug": "blue", "color": "#2A62D8", "name": "Trust Blue" },
-        { "slug": "coral", "color": "#FF6B4A", "name": "Warm Coral" },
-        { "slug": "mint", "color": "#2FA67A", "name": "Fresh Mint" },
-        { "slug": "lilac", "color": "#7C5CE0", "name": "Soft Lilac" },
-        { "slug": "tint-sky", "color": "#E6F3FF", "name": "Sky Tint" },
-        { "slug": "tint-mint", "color": "#E3F6EA", "name": "Mint Tint" },
-        { "slug": "tint-blush", "color": "#FFE7DF", "name": "Blush Tint" },
-        { "slug": "tint-lilac", "color": "#EEE8FF", "name": "Lilac Tint" },
-        { "slug": "tint-sun", "color": "#FFF0BF", "name": "Sun Tint" }
+        { "slug": "ink", "color": "#17233D", "name": "Ink Navy" },
+        { "slug": "ink-soft", "color": "#56617A", "name": "Ink Soft Slate" },
+        { "slug": "line", "color": "#DCE2EC", "name": "Border Line" },
+        { "slug": "navy", "color": "#142A5C", "name": "Institutional Navy (Primary)" },
+        { "slug": "navy-600", "color": "#1D3A78", "name": "Navy Hover" },
+        { "slug": "sun", "color": "#E7A100", "name": "Accent Gold" },
+        { "slug": "sun-hover", "color": "#C78B00", "name": "Gold Hover" },
+        { "slug": "blue", "color": "#1E4FA3", "name": "Action Blue" },
+        { "slug": "coral", "color": "#B23A2E", "name": "Brick Coral" },
+        { "slug": "mint", "color": "#1E7A55", "name": "Deep Mint" },
+        { "slug": "lilac", "color": "#4B3FA6", "name": "Indigo" },
+        { "slug": "tint-sky", "color": "#EAF1FB", "name": "Sky Tint" },
+        { "slug": "tint-mint", "color": "#E8F4EE", "name": "Mint Tint" },
+        { "slug": "tint-blush", "color": "#FBEDEA", "name": "Blush Tint" },
+        { "slug": "tint-lilac", "color": "#EFEDFA", "name": "Lilac Tint" },
+        { "slug": "tint-sun", "color": "#FBF2D9", "name": "Gold Tint" }
       ]
     },
     "typography": {
       "customFontSize": false,
       "fontFamilies": [
         {
-          "fontFamily": "\"Fredoka\", system-ui, -apple-system, sans-serif",
-          "name": "Fredoka (Headings)",
+          "fontFamily": "\"Plus Jakarta Sans\", system-ui, -apple-system, sans-serif",
+          "name": "Plus Jakarta Sans (Headings)",
           "slug": "head"
         },
         {
-          "fontFamily": "\"Nunito\", system-ui, -apple-system, sans-serif",
-          "name": "Nunito (Body & UI)",
+          "fontFamily": "\"Inter\", system-ui, -apple-system, sans-serif",
+          "name": "Inter (Body & UI)",
           "slug": "body"
         }
       ],
@@ -73,7 +75,7 @@
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--head)",
           "lineHeight": "1.15",
-          "fontWeight": "600"
+          "fontWeight": "700"
         }
       },
       "link": {

@@ -64,7 +64,7 @@ const requiredSlugs = [
 ];
 
 requiredSlugs.forEach((slug) => {
-  assert(serverCode.includes(`case '${slug}'`) || slug === '/', `Route ${slug} is mapped and handled`);
+  assert(serverCode.includes(`'${slug}':`), `Route ${slug} is mapped and handled`);
 });
 
 // 5. Run WCAG 2.2 AA Contrast Checks
