@@ -33,3 +33,18 @@ This is an append-only log of architectural and technical decisions, tradeoffs, 
 
 5. **Non-Technical Admin Safeguards**:
    The school admin (`gk_school_admin` role) must be able to edit text, announce notices, update fees, add galleries, and review enquiries without having the ability to break layout or install unvetted third-party plugins.
+
+---
+
+## Decision: Mobile View Margins & End-to-End Zoom Responsiveness (Stage 8 Refinement)
+
+- **Date**: 2026-10-19
+- **What**: Enhanced mobile view margins, fluid card/panel padding, and end-to-end zoom fitting across all viewport sizes (320px–4K) and zoom levels (50%–300%).
+- **Details**:
+  1. Updated viewport meta tag to include `viewport-fit=cover` across `header.php` and preview server for safe-area edge-to-edge support on modern devices.
+  2. Applied global viewport overflow containment (`overflow-x: hidden; max-width: 100vw;`) on `html` and `body`, paired with `overflow-wrap: break-word` on typography and `max-width: 100%` on buttons, media, canvas, and iframes to eliminate side-scroll.
+  3. Replaced static auto-fit column minimums with `minmax(min(100%, Xpx), 1fr)` across all cards, timeline, faculty, safety, and programme grids.
+  4. Converted card, form, and panel paddings to fluid clamps (`clamp(1rem, 3.5vw, ...)`) to maximize usable width on narrow devices while maintaining spacious desktop styling.
+  5. Refined institutional top utility bar and sticky header for mobile view: single-line helpline + admission badge on mobile screens, responsive logo title clamp, and collision-free menu toggle.
+  6. Verified momentum touch scrolling on data tables (`.table-scroll`) and flex-wrapping on footer legal links.
+- **Verification**: All launch-check tests, WCAG contrast checks, and build packaging passed (CSS bundle 11.59 KB gz, budget <= 25 KB).
